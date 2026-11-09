@@ -47,7 +47,7 @@ namespace AutoWeighingAndPrinting
                                 part_weight as PartWeight, tol_percent as TolerancePercent, tol_part_weight as TolerancePartWeight,
                                 negative_tol_percent as NegativeTolerancePercent, negative_tol_part_weight as NegativeTolerancePartWeight,
                                 positive_tol_percent as PositiveTolerancePercent, positive_tol_part_weight as PositiveTolerancePartWeight,
-                                image as Image, expiry_days as ExpiryDays,side_info as SideInfo,batch_no as LastBatchNumber FROM [1.childpart] order by ReferenceNumber";
+                                image as Image, expiry_days as ExpiryDays,side_info as SideInfo,batch_no as LastBatchNumber,last_print_count_date as LastPrintCountDate,daily_print_count as PrintCount  FROM [1.childpart] order by ReferenceNumber";
                 using (SQLiteConnection con = new SQLiteConnection(connectionString, true))
                 using (SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(sql, con))
                 {
@@ -1019,6 +1019,7 @@ namespace AutoWeighingAndPrinting
 
         private void MasterDataForm_Load(object sender, EventArgs e)
         {
+            tcMasterData.TabPages.Remove(tpManageAssemblyParts);
             bool enablePrintingHistory = appSettings.EnablePrintingHistory;
             if(!enablePrintingHistory)
             {

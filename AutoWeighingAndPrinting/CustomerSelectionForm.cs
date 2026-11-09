@@ -10,6 +10,7 @@ namespace AutoWeighingAndPrinting
     {
         readonly Config config;
         readonly AppSettings appSettings;
+        public bool GoBackToSizeSelection { get; private set; }
 
         public CustomerSelectionForm()
         {
@@ -28,6 +29,7 @@ namespace AutoWeighingAndPrinting
                 appSettings.LastCustomerSelected = lbCustomer.SelectedItem.ToString();
                 appSettings.PrintingFileName = lbCustomer.SelectedItem.ToString();
                 config.WriteSettings(appSettings);
+                this.DialogResult = DialogResult.OK;
 
                 this.Close();
             }
@@ -52,7 +54,7 @@ namespace AutoWeighingAndPrinting
 
             lblSelectedSize.Text = $"Selected Size : {appSettings.SelectedSize}";
 
-            string sizeFolderPath = Path.Combine(PrnHelper.PrnRootPath,selectedSize);
+            string sizeFolderPath = Path.Combine(PrnHelper.PrnRootPath, selectedSize);
 
             if (!Directory.Exists(sizeFolderPath))
             {
@@ -63,7 +65,7 @@ namespace AutoWeighingAndPrinting
 
             lbCustomer.Items.Clear();
 
-           // string currentFolderPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            // string currentFolderPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             string[] fileNames = Directory.GetFiles(sizeFolderPath, "*.prn");
             Array.Sort(fileNames, StringComparer.InvariantCulture);
 
@@ -99,6 +101,15 @@ namespace AutoWeighingAndPrinting
                 e.SuppressKeyPress = true;
                 BtnPrint_Click(sender, e);
             }
+        }
+
+        private void btnBackToSize_Click(object sender, EventArgs e)
+        {
+            GoBackToSizeSelection = true;
+
+            this.DialogResult = DialogResult.Retry;
+
+            this.Close();
         }
     }
 }

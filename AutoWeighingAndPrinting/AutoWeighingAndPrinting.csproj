@@ -182,6 +182,7 @@
     </Compile>
     <Compile Include="Helpers\AppLicenseValidator.cs" />
     <Compile Include="Helpers\PrnHelper.cs" />
+    <Compile Include="Helpers\WeighingStatus.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
