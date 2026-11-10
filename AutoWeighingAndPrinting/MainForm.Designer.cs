@@ -36,9 +36,16 @@
             this.tpChildPartWeighing = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.tlCount = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblTodayPrintCount = new System.Windows.Forms.Label();
+            this.tlImage = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tlImageContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.tlWeighStatus = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCountdown = new System.Windows.Forms.Label();
+            this.lblAutoWeighingStatus = new System.Windows.Forms.Label();
+            this.tlLiveWeight = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblWeightStatus = new System.Windows.Forms.Label();
             this.tlWeightRange = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,10 +59,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.lblMinimumWeight = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblWeightStatus = new System.Windows.Forms.Label();
-            this.lblCountdown = new System.Windows.Forms.Label();
-            this.lblAutoWeighingStatus = new System.Windows.Forms.Label();
+            this.tlCount = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblTodayPrintCount = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSelectedLabelSize = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -78,8 +84,6 @@
             this.tbTolPercent = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbNegativeTolPartWeight = new System.Windows.Forms.TextBox();
-            this.pbImage = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tbNegativeTolPercent = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbDBPartWeight = new System.Windows.Forms.TextBox();
@@ -91,7 +95,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbChildPartNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbLicenseinfo = new System.Windows.Forms.PictureBox();
@@ -101,16 +104,16 @@
             this.btnMasterData = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this._serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.tlLiveWeight = new System.Windows.Forms.TableLayoutPanel();
-            this.tlWeighStatus = new System.Windows.Forms.TableLayoutPanel();
-            this.tlImage = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.tcMainForm.SuspendLayout();
             this.tpChildPartWeighing.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tlCount.SuspendLayout();
+            this.tlImage.SuspendLayout();
+            this.tlImageContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            this.tlWeighStatus.SuspendLayout();
+            this.tlLiveWeight.SuspendLayout();
             this.tlWeightRange.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -118,15 +121,10 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tlCount.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLicenseinfo)).BeginInit();
-            this.tlLiveWeight.SuspendLayout();
-            this.tlWeighStatus.SuspendLayout();
-            this.tlImage.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -155,7 +153,6 @@
             // tpChildPartWeighing
             // 
             this.tpChildPartWeighing.Controls.Add(this.tableLayoutPanel1);
-            this.tpChildPartWeighing.Controls.Add(this.panel3);
             this.tpChildPartWeighing.Location = new System.Drawing.Point(4, 29);
             this.tpChildPartWeighing.Name = "tpChildPartWeighing";
             this.tpChildPartWeighing.Padding = new System.Windows.Forms.Padding(3);
@@ -176,7 +173,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1034, 619);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1034, 660);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel5
@@ -189,47 +186,139 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(434, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(597, 613);
+            this.panel5.Size = new System.Drawing.Size(597, 654);
             this.panel5.TabIndex = 1;
             // 
-            // tlCount
+            // tlImage
             // 
-            this.tlCount.ColumnCount = 2;
-            this.tlCount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.88889F));
-            this.tlCount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tlCount.Controls.Add(this.label9, 0, 0);
-            this.tlCount.Controls.Add(this.lblTodayPrintCount, 1, 0);
-            this.tlCount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlCount.Location = new System.Drawing.Point(0, 0);
-            this.tlCount.Name = "tlCount";
-            this.tlCount.RowCount = 1;
-            this.tlCount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlCount.Size = new System.Drawing.Size(597, 34);
-            this.tlCount.TabIndex = 37;
+            this.tlImage.ColumnCount = 1;
+            this.tlImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlImage.Controls.Add(this.tlImageContainer, 0, 1);
+            this.tlImage.Controls.Add(this.label6, 0, 0);
+            this.tlImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlImage.Location = new System.Drawing.Point(0, 259);
+            this.tlImage.Name = "tlImage";
+            this.tlImage.RowCount = 2;
+            this.tlImage.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlImage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlImage.Size = new System.Drawing.Size(597, 395);
+            this.tlImage.TabIndex = 40;
             // 
-            // label9
+            // label6
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Green;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(524, 34);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "Today\'s Print Count : ";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Image";
             // 
-            // lblTodayPrintCount
+            // tlImageContainer
             // 
-            this.lblTodayPrintCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTodayPrintCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayPrintCount.ForeColor = System.Drawing.Color.Green;
-            this.lblTodayPrintCount.Location = new System.Drawing.Point(533, 0);
-            this.lblTodayPrintCount.Name = "lblTodayPrintCount";
-            this.lblTodayPrintCount.Size = new System.Drawing.Size(61, 34);
-            this.lblTodayPrintCount.TabIndex = 34;
-            this.lblTodayPrintCount.Text = "0";
-            this.lblTodayPrintCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tlImageContainer.ColumnCount = 1;
+            this.tlImageContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlImageContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlImageContainer.Controls.Add(this.pbImage, 0, 0);
+            this.tlImageContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlImageContainer.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tlImageContainer.Location = new System.Drawing.Point(3, 23);
+            this.tlImageContainer.Name = "tlImageContainer";
+            this.tlImageContainer.RowCount = 1;
+            this.tlImageContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlImageContainer.Size = new System.Drawing.Size(591, 369);
+            this.tlImageContainer.TabIndex = 15;
+            this.tlImageContainer.Resize += new System.EventHandler(this.tlImageContainer_Resize);
+            // 
+            // pbImage
+            // 
+            this.pbImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImage.Location = new System.Drawing.Point(3, 3);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(585, 363);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImage.TabIndex = 15;
+            this.pbImage.TabStop = false;
+            // 
+            // tlWeighStatus
+            // 
+            this.tlWeighStatus.ColumnCount = 2;
+            this.tlWeighStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlWeighStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlWeighStatus.Controls.Add(this.lblCountdown, 0, 0);
+            this.tlWeighStatus.Controls.Add(this.lblAutoWeighingStatus, 1, 0);
+            this.tlWeighStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlWeighStatus.Location = new System.Drawing.Point(0, 206);
+            this.tlWeighStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.tlWeighStatus.Name = "tlWeighStatus";
+            this.tlWeighStatus.RowCount = 1;
+            this.tlWeighStatus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlWeighStatus.Size = new System.Drawing.Size(597, 53);
+            this.tlWeighStatus.TabIndex = 39;
+            // 
+            // lblCountdown
+            // 
+            this.lblCountdown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCountdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountdown.Location = new System.Drawing.Point(3, 0);
+            this.lblCountdown.Name = "lblCountdown";
+            this.lblCountdown.Size = new System.Drawing.Size(47, 53);
+            this.lblCountdown.TabIndex = 31;
+            this.lblCountdown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCountdown.Visible = false;
+            this.lblCountdown.TextChanged += new System.EventHandler(this.lblCountdown_TextChanged);
+            // 
+            // lblAutoWeighingStatus
+            // 
+            this.lblAutoWeighingStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAutoWeighingStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutoWeighingStatus.Location = new System.Drawing.Point(56, 0);
+            this.lblAutoWeighingStatus.Name = "lblAutoWeighingStatus";
+            this.lblAutoWeighingStatus.Size = new System.Drawing.Size(538, 53);
+            this.lblAutoWeighingStatus.TabIndex = 30;
+            this.lblAutoWeighingStatus.Text = "WAITING FOR PART";
+            this.lblAutoWeighingStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tlLiveWeight
+            // 
+            this.tlLiveWeight.ColumnCount = 1;
+            this.tlLiveWeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlLiveWeight.Controls.Add(this.label12, 0, 0);
+            this.tlLiveWeight.Controls.Add(this.lblWeightStatus, 0, 1);
+            this.tlLiveWeight.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlLiveWeight.Location = new System.Drawing.Point(0, 121);
+            this.tlLiveWeight.Name = "tlLiveWeight";
+            this.tlLiveWeight.RowCount = 2;
+            this.tlLiveWeight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.tlLiveWeight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
+            this.tlLiveWeight.Size = new System.Drawing.Size(597, 85);
+            this.tlLiveWeight.TabIndex = 38;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(591, 24);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Live Weight (KG)";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWeightStatus
+            // 
+            this.lblWeightStatus.BackColor = System.Drawing.Color.Red;
+            this.lblWeightStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWeightStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeightStatus.Location = new System.Drawing.Point(3, 24);
+            this.lblWeightStatus.Name = "lblWeightStatus";
+            this.lblWeightStatus.Size = new System.Drawing.Size(591, 61);
+            this.lblWeightStatus.TabIndex = 32;
+            this.lblWeightStatus.Text = "0.0000";
+            this.lblWeightStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tlWeightRange
             // 
@@ -398,55 +487,48 @@
             this.lblMinimumWeight.Text = "0.0000";
             this.lblMinimumWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // tlCount
             // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(591, 30);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Live Weight (KG)";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tlCount.ColumnCount = 2;
+            this.tlCount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.88889F));
+            this.tlCount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlCount.Controls.Add(this.label9, 0, 0);
+            this.tlCount.Controls.Add(this.lblTodayPrintCount, 1, 0);
+            this.tlCount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlCount.Location = new System.Drawing.Point(0, 0);
+            this.tlCount.Name = "tlCount";
+            this.tlCount.RowCount = 1;
+            this.tlCount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlCount.Size = new System.Drawing.Size(597, 34);
+            this.tlCount.TabIndex = 37;
             // 
-            // lblWeightStatus
+            // label9
             // 
-            this.lblWeightStatus.BackColor = System.Drawing.Color.Red;
-            this.lblWeightStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWeightStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWeightStatus.Location = new System.Drawing.Point(3, 30);
-            this.lblWeightStatus.Name = "lblWeightStatus";
-            this.lblWeightStatus.Size = new System.Drawing.Size(591, 77);
-            this.lblWeightStatus.TabIndex = 32;
-            this.lblWeightStatus.Text = "0.0000";
-            this.lblWeightStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Green;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(524, 34);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Today\'s Print Count : ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblCountdown
+            // lblTodayPrintCount
             // 
-            this.lblCountdown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCountdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountdown.Location = new System.Drawing.Point(3, 0);
-            this.lblCountdown.Name = "lblCountdown";
-            this.lblCountdown.Size = new System.Drawing.Size(47, 53);
-            this.lblCountdown.TabIndex = 31;
-            this.lblCountdown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCountdown.Visible = false;
-            this.lblCountdown.TextChanged += new System.EventHandler(this.lblCountdown_TextChanged);
-            // 
-            // lblAutoWeighingStatus
-            // 
-            this.lblAutoWeighingStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAutoWeighingStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutoWeighingStatus.Location = new System.Drawing.Point(56, 0);
-            this.lblAutoWeighingStatus.Name = "lblAutoWeighingStatus";
-            this.lblAutoWeighingStatus.Size = new System.Drawing.Size(538, 53);
-            this.lblAutoWeighingStatus.TabIndex = 30;
-            this.lblAutoWeighingStatus.Text = "Waiting for part";
-            this.lblAutoWeighingStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTodayPrintCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTodayPrintCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayPrintCount.ForeColor = System.Drawing.Color.Green;
+            this.lblTodayPrintCount.Location = new System.Drawing.Point(533, 0);
+            this.lblTodayPrintCount.Name = "lblTodayPrintCount";
+            this.lblTodayPrintCount.Size = new System.Drawing.Size(61, 34);
+            this.lblTodayPrintCount.TabIndex = 34;
+            this.lblTodayPrintCount.Text = "0";
+            this.lblTodayPrintCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.txtSelectedLabelSize);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.btnSelectCustomer);
@@ -482,7 +564,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(425, 613);
+            this.panel4.Size = new System.Drawing.Size(425, 654);
             this.panel4.TabIndex = 0;
             // 
             // txtSelectedLabelSize
@@ -694,26 +776,6 @@
             this.tbNegativeTolPartWeight.Size = new System.Drawing.Size(98, 23);
             this.tbNegativeTolPartWeight.TabIndex = 8;
             // 
-            // pbImage
-            // 
-            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbImage.Location = new System.Drawing.Point(3, 3);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(407, 300);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImage.TabIndex = 15;
-            this.pbImage.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Image";
-            // 
             // tbNegativeTolPercent
             // 
             this.tbNegativeTolPercent.BackColor = System.Drawing.Color.LightGray;
@@ -825,20 +887,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Part Number";
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 622);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1034, 41);
-            this.panel3.TabIndex = 0;
-            // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(7, 9);
+            this.label14.Location = new System.Drawing.Point(10, 624);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(146, 24);
             this.label14.TabIndex = 15;
@@ -940,66 +994,6 @@
             this._serialPort.DtrEnable = true;
             this._serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialPort_DataReceived);
             // 
-            // tlLiveWeight
-            // 
-            this.tlLiveWeight.ColumnCount = 1;
-            this.tlLiveWeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlLiveWeight.Controls.Add(this.label12, 0, 0);
-            this.tlLiveWeight.Controls.Add(this.lblWeightStatus, 0, 1);
-            this.tlLiveWeight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlLiveWeight.Location = new System.Drawing.Point(0, 121);
-            this.tlLiveWeight.Name = "tlLiveWeight";
-            this.tlLiveWeight.RowCount = 2;
-            this.tlLiveWeight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.tlLiveWeight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
-            this.tlLiveWeight.Size = new System.Drawing.Size(597, 107);
-            this.tlLiveWeight.TabIndex = 38;
-            // 
-            // tlWeighStatus
-            // 
-            this.tlWeighStatus.ColumnCount = 2;
-            this.tlWeighStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlWeighStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlWeighStatus.Controls.Add(this.lblCountdown, 0, 0);
-            this.tlWeighStatus.Controls.Add(this.lblAutoWeighingStatus, 1, 0);
-            this.tlWeighStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlWeighStatus.Location = new System.Drawing.Point(0, 228);
-            this.tlWeighStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.tlWeighStatus.Name = "tlWeighStatus";
-            this.tlWeighStatus.RowCount = 1;
-            this.tlWeighStatus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlWeighStatus.Size = new System.Drawing.Size(597, 53);
-            this.tlWeighStatus.TabIndex = 39;
-            // 
-            // tlImage
-            // 
-            this.tlImage.ColumnCount = 1;
-            this.tlImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlImage.Controls.Add(this.label6, 0, 0);
-            this.tlImage.Controls.Add(this.tableLayoutPanel5, 0, 1);
-            this.tlImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlImage.Location = new System.Drawing.Point(0, 281);
-            this.tlImage.Name = "tlImage";
-            this.tlImage.RowCount = 2;
-            this.tlImage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlImage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlImage.Size = new System.Drawing.Size(597, 332);
-            this.tlImage.TabIndex = 40;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel5.Controls.Add(this.pbImage, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 23);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(591, 306);
-            this.tableLayoutPanel5.TabIndex = 15;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1022,7 +1016,12 @@
             this.tpChildPartWeighing.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.tlCount.ResumeLayout(false);
+            this.tlImage.ResumeLayout(false);
+            this.tlImage.PerformLayout();
+            this.tlImageContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            this.tlWeighStatus.ResumeLayout(false);
+            this.tlLiveWeight.ResumeLayout(false);
             this.tlWeightRange.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -1030,19 +1029,12 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tlCount.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLicenseinfo)).EndInit();
-            this.tlLiveWeight.ResumeLayout(false);
-            this.tlWeighStatus.ResumeLayout(false);
-            this.tlImage.ResumeLayout(false);
-            this.tlImage.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1061,7 +1053,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tbChildPartDesc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbRequiredQty;
@@ -1122,7 +1113,7 @@
         private System.Windows.Forms.TableLayoutPanel tlLiveWeight;
         private System.Windows.Forms.TableLayoutPanel tlWeighStatus;
         private System.Windows.Forms.TableLayoutPanel tlImage;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tlImageContainer;
     }
 }
 

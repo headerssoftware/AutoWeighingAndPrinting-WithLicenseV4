@@ -72,6 +72,8 @@ namespace AutoWeighingAndPrinting
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ResizeImageBox();
+
             if (!CheckAppLicense())
             {
                 this.Dispose();
@@ -1825,6 +1827,33 @@ namespace AutoWeighingAndPrinting
                 SetCountdownVisibility(true);
             }
         }
+
+
+        private void ResizeImageBox()
+        {
+            // Get available panel dimensions
+            int cellWidth = tlImageContainer.ClientSize.Width;
+            int cellHeight = tlImageContainer.ClientSize.Height /
+                             tlImageContainer.RowCount;
+
+            int imageSize = Math.Min(cellWidth, cellHeight);
+
+            foreach (Control control in tlImageContainer.Controls)
+            {
+                if (control is PictureBox pb)
+                {
+                    pb.Width = imageSize - 10;
+                    pb.Height = imageSize - 10;
+
+                    // Align image to left
+                    pb.Left = 5;
+
+                    pb.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    pb.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+        }
+
         private enum WeighingState
         {
             WaitingForWeight,
@@ -1849,8 +1878,12 @@ namespace AutoWeighingAndPrinting
         private int _zeroWeightSeconds = 3;
 
         private double _zeroWeightThreshold = 0.005;
+
         #endregion
 
-
+        private void tlImageContainer_Resize(object sender, EventArgs e)
+        {
+            ResizeImageBox();
+        }
     }
 }
