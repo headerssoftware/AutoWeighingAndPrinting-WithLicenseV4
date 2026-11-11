@@ -50,9 +50,12 @@ namespace AutoWeighingAndPrinting
                     System.Reflection.BindingFlags.NonPublic)
                 .SetValue(tlWeighStatus, true, null);
 
-            _autoPrintTimer = new System.Windows.Forms.Timer();
+            _autoPrintTimer = new Timer
+            {
+                Interval = 1000
+            };
 
-            _autoPrintTimer.Interval = 1000;
+            _autoPrintTimer.Tick += AutoPrintTimer_Tick;
 
             _autoPrintTimer.Tick += AutoPrintTimer_Tick;
 
@@ -197,27 +200,27 @@ namespace AutoWeighingAndPrinting
             if (daysLeft == 0)
             {
                 lblLicenseExpirationInfo.ForeColor = Color.Red;
-                lblLicenseExpirationInfo.Text = $"Your License will expire today ({ExpiryDate.ToString("dd-MM-yyyy")}) ";
+                lblLicenseExpirationInfo.Text = $"Your License will expire today ({ExpiryDate:dd-MM-yyyy}) ";
                 lblLicenseExpirationInfo.Visible = true;
             }
             else if (daysLeft == 1)
             {
                 lblLicenseExpirationInfo.ForeColor = Color.Red;
-                lblLicenseExpirationInfo.Text = $"Your License will expire in {daysLeft} day ({ExpiryDate.ToString("dd-MM-yyyy")}) ";
+                lblLicenseExpirationInfo.Text = $"Your License will expire in {daysLeft} day ({ExpiryDate:dd-MM-yyyy}) ";
                 lblLicenseExpirationInfo.Visible = true;
 
             }
             else if (daysLeft <= 15)
             {
                 lblLicenseExpirationInfo.ForeColor = Color.DarkOrange;
-                lblLicenseExpirationInfo.Text = $"Your License will expire in {daysLeft} days ({ExpiryDate.ToString("dd-MM-yyyy")}) ";
+                lblLicenseExpirationInfo.Text = $"Your License will expire in {daysLeft} days ({ExpiryDate:dd-MM-yyyy}) ";
                 lblLicenseExpirationInfo.Visible = true;
 
             }
             else
             {
                 lblLicenseExpirationInfo.ForeColor = Color.Black;
-                lblLicenseExpirationInfo.Text = $"Your License is valid till {ExpiryDate.ToString("dd-MM-yyyy")} ";
+                lblLicenseExpirationInfo.Text = $"Your License is valid till {ExpiryDate:dd-MM-yyyy} ";
                 lblLicenseExpirationInfo.Visible = true;
             }
 
@@ -575,7 +578,7 @@ namespace AutoWeighingAndPrinting
 
         }
 
-        private void tbReferenceNumber_KeyDown(object sender, KeyEventArgs e)
+        private void TbReferenceNumber_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter || e.KeyData == Keys.Return)
             {
@@ -605,7 +608,7 @@ namespace AutoWeighingAndPrinting
             }
         }
 
-        private void tbReferenceNumber_TextChanged(object sender, EventArgs e)
+        private void TbReferenceNumber_TextChanged(object sender, EventArgs e)
         {
 
             ResetAutomaticWeighing();
@@ -765,18 +768,18 @@ namespace AutoWeighingAndPrinting
 
         }
 
-        private void pbLicenseinfo_MouseHover(object sender, EventArgs e)
+        private void PbLicenseinfo_MouseHover(object sender, EventArgs e)
         {
             pbLicenseinfo.BorderStyle = BorderStyle.FixedSingle;
             new System.Windows.Forms.ToolTip().SetToolTip(pbLicenseinfo, "License Info");
         }
 
-        private void pbLicenseinfo_MouseLeave(object sender, EventArgs e)
+        private void PbLicenseinfo_MouseLeave(object sender, EventArgs e)
         {
             pbLicenseinfo.BorderStyle = BorderStyle.None;
         }
 
-        private void pbLicenseinfo_Click(object sender, EventArgs e)
+        private void PbLicenseinfo_Click(object sender, EventArgs e)
         {
             try
             {
@@ -797,7 +800,7 @@ namespace AutoWeighingAndPrinting
         }
 
         #region New Code
-        private void btnSelectPrinter_Click(object sender, EventArgs e)
+        private void BtnSelectPrinter_Click(object sender, EventArgs e)
         {
             using (PrintDialog dialog = new PrintDialog())
             {
@@ -825,7 +828,7 @@ namespace AutoWeighingAndPrinting
             UpdateSelectionControls();
         }
 
-        private void btnSelectCustomer_Click(object sender, EventArgs e)
+        private void BtnSelectCustomer_Click(object sender, EventArgs e)
         {
             var sizeFolders = PrnHelper.GetSizeFolders();
 
@@ -1020,7 +1023,7 @@ namespace AutoWeighingAndPrinting
 
                 case WeighingState.WaitingForZero:
 
-                    if (Math.Abs(_currentWeightKg) <=
+                    if (Math.Abs(_currentWeightKg) ==
                         _zeroWeightThreshold)
                     {
                         StartZeroCountdown();
@@ -1799,7 +1802,7 @@ namespace AutoWeighingAndPrinting
         }
 
 
-        
+
         private void SetCountdownVisibility(bool visible)
         {
             lblCountdown.Visible = visible;
@@ -1816,7 +1819,7 @@ namespace AutoWeighingAndPrinting
             }
         }
 
-        private void lblCountdown_TextChanged(object sender, EventArgs e)
+        private void LblCountdown_TextChanged(object sender, EventArgs e)
         {
             if (lblCountdown.Text == "")
             {
@@ -1867,21 +1870,21 @@ namespace AutoWeighingAndPrinting
         private WeighingState _weighingState =
             WeighingState.WaitingForWeight;
 
-        private System.Windows.Forms.Timer _autoPrintTimer;
+        private readonly Timer _autoPrintTimer;
 
         private double _currentWeightKg = 0;
 
         private int _remainingSeconds = 0;
 
-        private int _stableWeightSeconds = 3;
+        private readonly int _stableWeightSeconds = 0;
 
-        private int _zeroWeightSeconds = 3;
+        private readonly int _zeroWeightSeconds = 0;
 
-        private double _zeroWeightThreshold = 0.005;
+        private readonly double _zeroWeightThreshold = 0.000;
 
         #endregion
 
-        private void tlImageContainer_Resize(object sender, EventArgs e)
+        private void TlImageContainer_Resize(object sender, EventArgs e)
         {
             ResizeImageBox();
         }

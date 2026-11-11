@@ -227,7 +227,7 @@
             this.tlImageContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlImageContainer.Size = new System.Drawing.Size(591, 369);
             this.tlImageContainer.TabIndex = 15;
-            this.tlImageContainer.Resize += new System.EventHandler(this.tlImageContainer_Resize);
+            this.tlImageContainer.Resize += new System.EventHandler(this.TlImageContainer_Resize);
             // 
             // pbImage
             // 
@@ -268,7 +268,7 @@
             this.lblCountdown.TabIndex = 31;
             this.lblCountdown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCountdown.Visible = false;
-            this.lblCountdown.TextChanged += new System.EventHandler(this.lblCountdown_TextChanged);
+            this.lblCountdown.TextChanged += new System.EventHandler(this.LblCountdown_TextChanged);
             // 
             // lblAutoWeighingStatus
             // 
@@ -595,7 +595,7 @@
             this.btnSelectCustomer.TabIndex = 33;
             this.btnSelectCustomer.Text = "Change";
             this.btnSelectCustomer.UseVisualStyleBackColor = true;
-            this.btnSelectCustomer.Click += new System.EventHandler(this.btnSelectCustomer_Click);
+            this.btnSelectCustomer.Click += new System.EventHandler(this.BtnSelectCustomer_Click);
             // 
             // txtCustomerName
             // 
@@ -625,7 +625,7 @@
             this.btnSelectPrinter.TabIndex = 30;
             this.btnSelectPrinter.Text = "Change";
             this.btnSelectPrinter.UseVisualStyleBackColor = true;
-            this.btnSelectPrinter.Click += new System.EventHandler(this.btnSelectPrinter_Click);
+            this.btnSelectPrinter.Click += new System.EventHandler(this.BtnSelectPrinter_Click);
             // 
             // txtPrinterName
             // 
@@ -693,8 +693,8 @@
             this.tbReferenceNumber.Name = "tbReferenceNumber";
             this.tbReferenceNumber.Size = new System.Drawing.Size(193, 22);
             this.tbReferenceNumber.TabIndex = 0;
-            this.tbReferenceNumber.TextChanged += new System.EventHandler(this.tbReferenceNumber_TextChanged);
-            this.tbReferenceNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbReferenceNumber_KeyDown);
+            this.tbReferenceNumber.TextChanged += new System.EventHandler(this.TbReferenceNumber_TextChanged);
+            this.tbReferenceNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbReferenceNumber_KeyDown);
             // 
             // label20
             // 
@@ -923,9 +923,9 @@
             this.pbLicenseinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLicenseinfo.TabIndex = 13;
             this.pbLicenseinfo.TabStop = false;
-            this.pbLicenseinfo.Click += new System.EventHandler(this.pbLicenseinfo_Click);
-            this.pbLicenseinfo.MouseLeave += new System.EventHandler(this.pbLicenseinfo_MouseLeave);
-            this.pbLicenseinfo.MouseHover += new System.EventHandler(this.pbLicenseinfo_MouseHover);
+            this.pbLicenseinfo.Click += new System.EventHandler(this.PbLicenseinfo_Click);
+            this.pbLicenseinfo.MouseLeave += new System.EventHandler(this.PbLicenseinfo_MouseLeave);
+            this.pbLicenseinfo.MouseHover += new System.EventHandler(this.PbLicenseinfo_MouseHover);
             // 
             // lblLicenseExpirationInfo
             // 
