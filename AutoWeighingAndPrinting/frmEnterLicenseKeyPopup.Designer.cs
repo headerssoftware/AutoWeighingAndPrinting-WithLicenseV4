@@ -176,7 +176,7 @@
             this.tbLicenseKey.Name = "tbLicenseKey";
             this.tbLicenseKey.Size = new System.Drawing.Size(452, 29);
             this.tbLicenseKey.TabIndex = 0;
-            this.tbLicenseKey.TextChanged += new System.EventHandler(this.tbLicenseKey_TextChanged);
+            this.tbLicenseKey.TextChanged += new System.EventHandler(this.TbLicenseKey_TextChanged);
             // 
             // btnSubmit
             // 
@@ -187,7 +187,7 @@
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // label1
             // 
@@ -223,7 +223,7 @@
             this.Name = "frmEnterLicenseKeyPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "License Key";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEnterLicenseKeyPopup_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEnterLicenseKeyPopup_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

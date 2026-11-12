@@ -150,7 +150,7 @@
             this.tbExpiryDays.Name = "tbExpiryDays";
             this.tbExpiryDays.Size = new System.Drawing.Size(55, 26);
             this.tbExpiryDays.TabIndex = 4;
-            this.tbExpiryDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbExpiryDays_KeyPress);
+            this.tbExpiryDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbExpiryDays_KeyPress);
             // 
             // label6
             // 

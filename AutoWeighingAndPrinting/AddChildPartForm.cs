@@ -229,7 +229,7 @@ namespace AutoWeighingAndPrinting
                 e.Handled = true;
             }
         }
-        private void tbExpiryDays_KeyPress(object sender, KeyPressEventArgs e)
+        private void TbExpiryDays_KeyPress(object sender, KeyPressEventArgs e)
         {
             // only allow integers
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

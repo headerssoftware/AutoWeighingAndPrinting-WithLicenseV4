@@ -54,7 +54,7 @@ namespace AutoWeighingAndPrinting
             }
         }
 
-        private void btnNext_Click(object sender, System.EventArgs e)
+        private void BtnNext_Click(object sender, System.EventArgs e)
         {
             if (lbLabelSize.SelectedItem == null)
             {
@@ -84,12 +84,12 @@ namespace AutoWeighingAndPrinting
             }
         }
 
-        private void lbLabelSize_KeyDown(object sender, KeyEventArgs e)
+        private void LbLabelSize_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter || e.KeyData == Keys.Return)
             {
                 e.SuppressKeyPress = true;
-                btnNext_Click(sender, e);
+                BtnNext_Click(sender, e);
             }
         }
     }

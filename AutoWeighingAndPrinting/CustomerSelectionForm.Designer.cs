@@ -110,7 +110,7 @@
             this.btnBackToSize.TabIndex = 15;
             this.btnBackToSize.Text = "Back to Size";
             this.btnBackToSize.UseVisualStyleBackColor = true;
-            this.btnBackToSize.Click += new System.EventHandler(this.btnBackToSize_Click);
+            this.btnBackToSize.Click += new System.EventHandler(this.BtnBackToSize_Click);
             // 
             // CustomerSelectionForm
             // 

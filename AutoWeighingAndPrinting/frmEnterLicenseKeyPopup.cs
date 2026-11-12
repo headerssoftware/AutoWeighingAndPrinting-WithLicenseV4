@@ -10,7 +10,7 @@ namespace AutoWeighingAndPrinting
         private bool isLicenseKeyVerified;
 
         private readonly Config config;
-        private AppSettings appSettings;
+        private readonly AppSettings appSettings;
         private readonly LicenseStatus licenseStatus;
 
         public LicenseDetail LicenseDetailResult { get; set; } = null;
@@ -64,12 +64,12 @@ namespace AutoWeighingAndPrinting
             }
         }
 
-        private void tbLicenseKey_TextChanged(object sender, EventArgs e)
+        private void TbLicenseKey_TextChanged(object sender, EventArgs e)
         {
             this.AcceptButton = btnSubmit;
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void BtnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace AutoWeighingAndPrinting
                         if (licenseLastDate.Date < DateTime.Now.Date)
                         {
                             this.Cursor = Cursors.Default;
-                            MessageBox.Show($"Entered License Key already got expired on {licenseLastDate.ToString("dd-MM-yyyy")}!. Please enter a valid License Key to continue with the app!", "License Key Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"Entered License Key already got expired on {licenseLastDate:dd-MM-yyyy}!. Please enter a valid License Key to continue with the app!", "License Key Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             tbLicenseKey.Focus();                          
                             return;
                         }
@@ -114,7 +114,7 @@ namespace AutoWeighingAndPrinting
                             config.WriteSettings(appSettings);
 
                             this.Cursor = Cursors.Default;
-                            MessageBox.Show($"License Key updated successfully!. The License Key is valid upto {licenseLastDate.ToString("dd-MM-yyyy")}", "License Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"License Key updated successfully!. The License Key is valid upto {licenseLastDate:dd-MM-yyyy}", "License Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isLicenseKeyVerified = true;
                             LicenseDetailResult = licenseDetail;
                             this.Close();
@@ -136,7 +136,7 @@ namespace AutoWeighingAndPrinting
 
         }
 
-        private void frmEnterLicenseKeyPopup_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmEnterLicenseKeyPopup_FormClosing(object sender, FormClosingEventArgs e)
         {
 
             if(!isLicenseKeyVerified && licenseStatus!= LicenseStatus.ChangeLicense)

@@ -43,7 +43,7 @@ namespace AutoWeighingAndPrinting
 
                 string enteredPassword = tbPassword.Text;
 
-                string sql = @"SELECT password as PASSWORD FROM [7.users] WHERE username='ADMIN'";
+                string sql = @"SELECT password as PASSWORD FROM [3.users] WHERE username='ADMIN'";
                 DataTable dataTable = new DataTable();
                 using (SQLiteConnection con = new SQLiteConnection(connectionString, true))
                 using (SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(sql, con))

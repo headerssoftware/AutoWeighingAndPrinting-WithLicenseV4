@@ -60,7 +60,7 @@
             this.lbLabelSize.Name = "lbLabelSize";
             this.lbLabelSize.Size = new System.Drawing.Size(369, 468);
             this.lbLabelSize.TabIndex = 13;
-            this.lbLabelSize.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbLabelSize_KeyDown);
+            this.lbLabelSize.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LbLabelSize_KeyDown);
             // 
             // btnNext
             // 
@@ -73,7 +73,7 @@
             this.btnNext.TabIndex = 12;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // label26
             // 

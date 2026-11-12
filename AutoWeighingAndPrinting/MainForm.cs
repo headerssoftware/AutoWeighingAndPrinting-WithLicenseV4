@@ -110,8 +110,7 @@ namespace AutoWeighingAndPrinting
                             using (var transaction = conn.BeginTransaction())
                             {
                                 cmd.CommandText =
-                                    @"DELETE FROM [4.childpart_history] where date_time <= @date_time;" +
-                                    @"DELETE FROM [5.assembly_history] where date_time <= @date_time;";
+                                    @"DELETE FROM [2.childpart_history] where date_time <= @date_time;";
                                 cmd.Parameters.AddWithValue("@date_time", deleteBeforeDate.ToString("yyyy-MM-dd 23:59:59"));
 
                                 cmd.ExecuteNonQuery();
@@ -1282,7 +1281,7 @@ namespace AutoWeighingAndPrinting
                     cmd.Transaction = transaction;
 
                     cmd.CommandText = @"
-                INSERT INTO [4.childpart_history]
+                INSERT INTO [2.childpart_history]
                 (
                     date_time,
                     customer_name,

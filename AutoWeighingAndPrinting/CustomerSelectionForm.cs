@@ -103,7 +103,7 @@ namespace AutoWeighingAndPrinting
             }
         }
 
-        private void btnBackToSize_Click(object sender, EventArgs e)
+        private void BtnBackToSize_Click(object sender, EventArgs e)
         {
             GoBackToSizeSelection = true;
 
